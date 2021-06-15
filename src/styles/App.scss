@@ -1,0 +1,77 @@
+@import './breakpoints.scss';
+@import './variables.scss';
+@import './components/preloader.scss';
+@import './components/header.scss';
+@import './components/navigation.scss';
+@import './components/footer.scss';
+@import './pages/home.scss';
+@import './pages/about.scss';
+@import './pages/services.scss';
+
+
+
+// entry transition class
+.transition {
+    overflow: hidden;
+    height: 0;
+    z-index: 1;
+    background: $black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    // bottom: 0;
+    right: 0;
+}
+
+
+// exit transition class
+.transition2 {
+    @extend .transition;
+    z-index: 5;
+}
+
+
+//custom cursor
+
+.cursor {
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    background-color: $white;
+    border-radius: 50%;
+    color: $black;
+    position: absolute;
+    transition: 450ms ease-out;
+    z-index: 10;
+    mix-blend-mode: exclusion;
+    animation: cursorName 500ms infinite alternate;
+
+    @include media("<=tablet") {
+        display: none;
+    }
+}
+
+.cursor2 {
+    width: 10px;
+    height: 10px;
+    transition: 200ms ease-out;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.pages {
+    max-width: 1440px;
+    margin: 0 auto;
+}

@@ -1,0 +1,57 @@
+// primary
+$black: #000000;
+$white: #ffffff;
+$blueBlack: #0B0B0F;
+$red: #df020a;
+$blackSec: #131419;
+
+
+// secondary
+$blue: #6166DC;
+
+
+//sub-texts/links
+$subText: #868F97;
+$darkOrange: #f72d00;
+$green: #00ffba;
+$secText: #858383;
+$col-yellow: #DBB635;
+
+
+
+
+// landing shapes
+$blueShape: #2a97ff;
+$redShape: #ff3562;
+$greenShape: #57e0c6;
+$purpleShape: #6935db;
+
+
+//unused colors
+// $shape: #2f2f2f;
+$grey-black: #0f0f0f;
+$orange: #f26d50;
+$pinkShape: #ff61bc;
+
+// portfolio boxes
+$boxBlue: #2a6ef0;
+
+
+
+@mixin button {
+    outline: none;
+    border: transparent;
+    // border-radius: 5px;
+    cursor: pointer;
+    // font-weight: 600;
+    text-transform: capitalize;
+    color: $white;
+    padding: 15px 30px;
+}
+
+@mixin textUnderline($color) {
+    background: linear-gradient(0deg, rgba(255, 0, 255, 0) 0%, rgba(255, 0, 255, 0) 16%, $color 16%, $color 32%, rgba(255, 0, 255, 0) 10%);
+    padding: .2em 0.1em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}

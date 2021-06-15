@@ -1,0 +1,133 @@
+.active-link {
+    opacity: 1 !important;
+    // position: relative;
+
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     background: $white;
+    //     width: 60px;
+    //     height: 7px;
+    //     left: -70px;
+    //     top: 45%;
+    //     transition: all .2s linear;
+    // }
+}
+
+.hamburger-menu {
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    display: none;
+    cursor: none;
+
+    .nav-secondary {
+        overflow: hidden;
+        height: 0;
+        background: $white;
+        z-index: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .nav-primary {
+        position: relative;
+        height: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: #372199;
+        z-index: 1;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        .nav-content {
+            position: relative;
+            top: 120px;
+            color: $white;
+            // padding: 0 80px;
+            z-index: 0;
+
+            .nav-title {
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 0.2em;
+                margin-bottom: 30px;
+            }
+
+            // @include media("<=phone") {
+            //     padding: 0 40px;
+            // }
+
+            .nav-links {
+                // text-align: right;
+                // font-family: 'Manrope', sans-serif;
+                text-align: center;
+                font-weight: 800;
+                font-size: 48px;
+                position: relative;
+
+                @include media("<=tablet") {
+                    font-size: 38px;
+                }
+            }
+
+            .nav-link {
+                margin-bottom: 5px;
+
+                &::before {
+                    content: attr(data-text);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: $white;
+                    z-index: -1;
+                    white-space: nowrap;
+                    font-size: 2em;
+                    pointer-events: none;
+                    opacity: 0;
+                    letter-spacing: 20px;
+                    transition: .5s;
+                }
+
+                &:hover {
+                    &::before {
+                        opacity: 0.5;
+                        letter-spacing: 0px;
+                    }
+                }
+
+                a {
+                    transition: all .2s linear;
+                    opacity: 0.9;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                @include media("<=tablet") {
+                    opacity: 1;
+                }
+
+
+
+
+                a {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.main-footer {
+    padding: 50px 100px;
+    background: $blueBlack;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+
+    @include media("<=tablet") {
+        padding: 50px 40px;
+        padding-bottom: 10px;
+    }
+
+    hr {
+        border-color: $secText;
+        border-width: 1px;
+        margin-bottom: 60px;
+        opacity: 0.4;
+    }
+
+    .footer-top {
+        font-size: 15px;
+
+        @include media("<=820px") {
+            font-size: 14px;
+        }
+
+        @include media("<=tablet") {
+            font-size: 12px;
+        }
+
+        @include media("<=570px") {
+            font-size: 14px;
+        }
+
+        font-weight: 500;
+
+        .message {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+        }
+
+        .links {
+            color: $subText;
+            display: flex;
+
+            @include media("<=phone") {
+                flex-direction: column;
+            }
+
+            .link {
+                p {
+                    margin-bottom: 20px;
+
+                    @include media("<=820px") {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                a {
+                    position: relative;
+                    // overflow: hidden;
+
+
+
+                    &::after {
+                        color: #fff;
+                        position: absolute;
+                        overflow: hidden;
+                        content: attr(data-text);
+                        background-color: transparent;
+                        width: 0%;
+                        left: 0;
+                        right: 0;
+                        box-sizing: border-box;
+                        transition: width .2s linear;
+                    }
+
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &:first-of-type {
+                    margin-right: 15em;
+
+                    @include media("<=950px") {
+                        margin-right: 10em;
+                    }
+
+                    @include media("<=tablet") {
+                        margin-right: 7em;
+                    }
+
+                    @include media("<=phone") {
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        color: $subText;
+        padding: 140px 0;
+        padding-bottom: 0;
+        text-align: right;
+        font-size: 16px;
+
+        @include media("<=820px") {
+            font-size: 14px;
+        }
+
+        @include media("<=tablet") {
+            font-size: 12px;
+            padding: 60px 0;
+        }
+
+        @include media("<=570px") {
+            text-align: left;
+            font-size: 14px;
+            padding: 100px 0;
+            padding-bottom: 40px;
+        }
+
+    }
+}

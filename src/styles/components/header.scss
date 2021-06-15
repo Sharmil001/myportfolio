@@ -1,0 +1,184 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  padding: 0 50px;
+  left: 10px;
+  right: 10px;
+  padding-top: 20px;
+  align-items: center;
+  z-index: 10;
+
+  @include media("<=600px") {
+    padding: 0 20px;
+    padding-top: 30px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Megrim&display=swap');
+
+  #logo {
+    position: fixed;
+    // font-family: "Lobster", cursive;
+    // font-weight: lighter;
+    font-family: 'Josefin Sans', sans-serif;
+font-family: 'Megrim', cursive;
+    color: #39B877;
+
+    .logo1{
+      color: white;
+    }
+
+    .dev{
+      // font-family: "Lobster", cursive;
+      // font-weight: lighter;
+      font-size: 1rem;
+      font-weight: 50;
+      color: white !important;
+    }
+
+    @include media("<=780px") {
+      position: static;
+      width: 120px;
+    }
+
+    .cls-1 {
+      fill: #08e7f3;
+    }
+  }
+
+  
+
+  // .logo {
+  //   position: fixed;
+  //   top: 30px;
+  //   left: 30px;
+  //   padding: 10px;
+  //   width: 160px;
+  //   z-index: 10;
+
+  //   @include media("<=780px") {
+  //     position: static;
+  //     width: 120px;
+  //   }
+
+  //   svg {
+  //     .cls-1 {
+  //       fill: #08e7f3;
+  //     }
+  //   }
+  // }
+
+  // .logo-open {
+  //     svg {
+  //         .cls-1 {
+  //             fill: $white;
+  //         }
+  //     }
+  // }
+
+  .ham-disabled {
+    pointer-events: none;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    mix-blend-mode: difference;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    // background: transparentize($blueBlack, 0.2);
+
+    @include media("<=780px") {
+      position: static;
+    }
+
+    &:hover {
+      .hamburger-icon::before {
+        transform: rotate(0deg) translate(-5px, -4px);
+      }
+
+      .hamburger-icon::after {
+        transform: rotate(0deg) translate(5px, 4px);
+      }
+    }
+
+    @include media("<=tablet") {
+      &:hover {
+        .hamburger-icon::before {
+          transform: rotate(0deg) translate(0px, -4px);
+        }
+
+        .hamburger-icon::after {
+          transform: rotate(0deg) translate(0px, 4px);
+        }
+      }
+    }
+  }
+
+  .hamburger-icon {
+    color: $white;
+    position: relative;
+    top: 50%;
+    left: 30%;
+
+    @include media("<=tablet") {
+      left: 35%;
+      top: 45%;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      background: $white;
+      transform: rotate(0deg) translate(0px, -4px);
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &::after {
+      transform: rotate(0deg) translate(0px, 4px);
+    }
+  }
+
+  .hamburger__active {
+    @extend .hamburger;
+
+    &:hover {
+      .hamburger-icon::before {
+        transform: rotate(0deg) translate(0, 0);
+      }
+
+      .hamburger-icon::after {
+        transform: rotate(0deg) translate(0, 0);
+      }
+    }
+
+    @include media("<=tablet") {
+      &:hover {
+        .hamburger-icon::before {
+          transform: rotate(-45deg) translate(0px, 0px);
+        }
+
+        .hamburger-icon::after {
+          transform: rotate(45deg) translate(0px, 0px);
+        }
+      }
+    }
+
+    .hamburger-icon {
+      @extend .hamburger-icon;
+
+      &::before {
+        transform: rotate(-45deg) translate(0px, 0px);
+      }
+
+      &::after {
+        transform: rotate(45deg) translate(0px, 0px);
+      }
+    }
+  }
+}

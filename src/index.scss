@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+
+
+::-webkit-scrollbar {
+  background-color: #202324;
+  color: #aba499;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #575e62;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #484e51;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #181a1b;
+}
+
+* {
+  scrollbar-color: #202324 #454a4d;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  visibility: hidden;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+// @font-face {
+//   font-family: 'Proxima Nova';
+//   src: url("/src/assets/fonts/ProximaNova-Bold.ttf") format("truetype");
+//   font-weight: bold;
+// }

@@ -1,0 +1,204 @@
+body {
+    background: $blueBlack;
+}
+
+.about {
+    position: relative;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    background: $blueBlack;
+    color: $white;
+    z-index: 2;
+
+
+
+    &__top {
+        padding: 150px 220px;
+        padding-right: 450px;
+        padding-top: 180px;
+        background: $blueBlack;
+
+        @include media("<=1040px") {
+            padding-right: 250px;
+        }
+
+        @include media("<=950px") {
+            padding-left: 170px;
+            padding-right: 180px;
+        }
+
+        @include media("<=tablet") {
+            padding: 150px 40px;
+            padding-bottom: 100px;
+        }
+
+
+        .my-name {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 55px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            position: relative;
+
+            @include media("<=950px") {
+                font-size: 45px;
+            }
+
+            @include media("<=tablet") {
+                font-size: 35px;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: 5px;
+                width: 40px;
+                background: $purpleShape;
+                top: -20px;
+                left: -60px;
+
+                @include media("<=tablet") {
+                    left: 0;
+                }
+            }
+        }
+
+        .desc {
+            margin-top: 20px;
+            color: $subText;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 40px;
+
+            @include media("<=950px") {
+                font-size: 15px;
+            }
+
+            @include media("<=tablet") {
+                font-size: 14px;
+            }
+        }
+
+        a {
+            font-weight: 500;
+            transition: color .2s linear;
+
+            &:hover {
+                color: $red;
+            }
+
+            i {
+                margin-right: 8px;
+                transition: color .1s linear;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        padding: 0 250px;
+        padding-right: 150px;
+
+        @include media("<=1040px") {
+            padding-right: 50px;
+        }
+
+        @include media("<=1040px") {
+            padding-left: 180px;
+        }
+
+        @include media("<=tablet") {
+            padding: 0 40px;
+        }
+
+        .main-title {
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 26px;
+            margin-bottom: 20px;
+            margin-right: 220px;
+
+            @include media("<=1040px") {
+                margin-right: 50px;
+            }
+
+            @include media("<=tablet") {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+
+            span {
+                @include textUnderline($purpleShape);
+            }
+        }
+
+        .stack {
+            margin-right: 285px;
+
+            @include media("<=1040px") {
+                margin-right: 115px;
+            }
+
+            @include media("<=tablet") {
+                margin-right: 0;
+            }
+        }
+
+
+        .experience {
+            display: flex;
+            // justify-content: space-between;
+
+            @include media("<=tablet") {
+                flex-direction: column;
+            }
+
+
+            .companies {
+                margin-top: 60px;
+                font-size: 14px;
+
+                @include media("<=tablet") {
+                    margin-top: 40px;
+                }
+
+
+                .company {
+                    margin-bottom: 50px;
+
+                    .name {
+                        font-size: 15px;
+                    }
+
+                    .year {
+                        color: #8d61ec;
+                        font-size: 12px;
+                    }
+
+
+                    .tech {
+                        color: #8d61ec;
+                    }
+
+                    .name {
+                        font-weight: 600;
+                        margin-bottom: 20px;
+                    }
+
+                    .tasks {
+                        list-style-type: square;
+
+                        li {
+                            margin-bottom: 10px;
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
